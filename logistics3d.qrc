@@ -25,5 +25,7 @@
         <file>images/header/about.png</file>
         <file>images/header/help.png</file>
         <file>images/header/menu.png</file>
+        <file>images/close.png</file>
+        <file>images/menu_indicator.png</file>
     </qresource>
 </RCC>

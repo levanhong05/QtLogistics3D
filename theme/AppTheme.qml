@@ -69,4 +69,7 @@ QtObject
 
     readonly property real rowSpacing: vscale(16)
     readonly property real columnSpacing: hscale(20)
+
+    readonly property real radioButtonPadding: tscale(8)
+    readonly property real radioButtonSpacing: tscale(10)
 }

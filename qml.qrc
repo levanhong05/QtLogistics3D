@@ -12,5 +12,7 @@
         <file>header/NavigationBar.qml</file>
         <file>header/NavigationButtonItem.qml</file>
         <file>header/NavigationTextButtonItem.qml</file>
+        <file>dialogs/AboutDialog.qml</file>
+        <file>dialogs/LanguageDialog.qml</file>
     </qresource>
 </RCC>

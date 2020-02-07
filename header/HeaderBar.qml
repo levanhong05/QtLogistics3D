@@ -27,38 +27,50 @@ import QtQuick.Controls 2.3
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.1
 
+import "../dialogs"
 import "../theme"
 
 import "../scripts/global.js" as Global
 import "../scripts/branding.js" as Branding
 
 Frame {
-    property bool drawerVisible: true
-
-    property bool topSpacing: true
-
     padding: AppTheme.tscale(10)
 
     Layout.fillWidth: true
 
     background: Rectangle {
-        color: "#38addb"
+        color: "#ffffff"
         border.color: "transparent"
         radius: 0
     }
 
     property var navigationModel: [
-        {"type": "../header/NavigationButtonItem.qml", "name": qsTr("About us"), "icon": "about.png" },
-        {"type": "../header/NavigationButtonItem.qml", "name": qsTr("Help and Support"), "icon": "help.png" }
+        {"type": "../header/NavigationButtonItem.qml", "name": qsTr("About us") + translator.tr, "icon": "about.png" },
+        {"type": "../header/NavigationButtonItem.qml", "name": qsTr("Help and Support") + translator.tr, "icon": "help.png" }
     ]
 
     property int headerBarIndex: -1
 
     onHeaderBarIndexChanged: {
-        //TODO
+        switch (headerBarIndex) {
+            case 0: // About
+                aboutDialog.open()
+                break;
+
+            case 1:
+                //TODO
+                break;
+
+            default:
+                break;
+        }
 
         //After process, reset header index by -1
         headerBarIndex = -1
+    }
+
+    AboutDialog {
+        id: aboutDialog
     }
 
     ColumnLayout {
@@ -72,8 +84,8 @@ Frame {
             Image {
                 id: btnMenu
 
-                Layout.preferredWidth: AppTheme.tscale(24)
-                Layout.preferredHeight: AppTheme.tscale(24)
+                Layout.preferredWidth: AppTheme.tscale(48)
+                Layout.preferredHeight: AppTheme.tscale(48)
 
                 fillMode: Image.PreserveAspectFit
                 smooth: true
@@ -81,7 +93,7 @@ Frame {
                 horizontalAlignment: Image.AlignHCenter
                 verticalAlignment: Image.AlignVCenter
 
-                source: "qrc:/logistics3d/images/header/menu.png"
+                source: "qrc:/logistics3d/images/menu_indicator.png"
 
                 MouseArea {
                     anchors.fill: parent
@@ -93,6 +105,32 @@ Frame {
                         navigationBar.open()
                     }
                 }
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            Label {
+                id: lblTitle
+                text: Branding.VER_APPNAME_STR
+                color: "#039be6"
+
+                font {
+                    capitalization: Font.AllUppercase
+                    weight: Font.Bold
+                    bold: true
+                    pointSize: AppTheme.textSize23
+                }
+
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+
+                padding: AppTheme.propertyPadding
+            }
+
+            Item {
+                Layout.preferredWidth: AppTheme.hscale(50)
             }
         }
     }

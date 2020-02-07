@@ -51,7 +51,9 @@ var VER_PUBLISHEDYEAR_STR = "2020"
 
 var VER_LEGALCOPYRIGHT_STR = "© " + VER_PUBLISHEDYEAR_STR + " " + VER_PUBLISHER_STR
 
-var VER_MANUFACTURER_STR = "Eric Lee"
+var VER_MANUFACTURER_STR = "Eric Lee (Hong Le)"
+
+var VER_EMAIL = "levanhong05@gmail.com"
 
 var VER_COMPANYDOMAIN_STR = "https://levanhong05.wordpress.com"
 
