@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>scripts/branding.js</file>
+        <file>scripts/global.js</file>
+        <file>scripts/setting.js</file>
+        <file>theme/AppTheme.qml</file>
+        <file>theme/qmldir</file>
+        <file>header/DividerItem.qml</file>
+        <file>header/HeaderBar.qml</file>
+        <file>header/NavigationBar.qml</file>
+        <file>header/NavigationButtonItem.qml</file>
+        <file>header/NavigationTextButtonItem.qml</file>
+        <file>dialogs/AboutDialog.qml</file>
+        <file>dialogs/LanguageDialog.qml</file>
+        <file>dialogs/SettingDialog.qml</file>
+        <file>screens/RenderScreen.qml</file>
+        <file>materials/Water.qml</file>
+        <file>materials/WaterMaterial.qml</file>
+    </qresource>
+</RCC>
