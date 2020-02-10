@@ -29,7 +29,7 @@ import QtQuick.Controls.Material 2.1
 
 import "../theme"
 
-import "../scripts/global.js" as Global
+import "../scripts/setting.js" as Settings
 import "../scripts/branding.js" as Branding
 
 Frame {
@@ -56,6 +56,14 @@ Frame {
     onHeaderBarIndexChanged: {
         switch (headerBarIndex) {
             case 0: // Language
+                var strCurrentLanguage = Settings.language
+
+                if (strCurrentLanguage === "vi_VN") {
+                    languageDialog.currentLanguage = 1
+                } else {
+                    languageDialog.currentLanguage = 0
+                }
+
                 languageDialog.open()
                 break;
 

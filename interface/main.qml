@@ -22,6 +22,7 @@ import QtQuick 2.10
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Scene3D 2.0
+import QtQuick.Controls.Material 2.1
 
 import Setting 1.0
 
@@ -30,6 +31,7 @@ import "dialogs"
 import "theme"
 import "screens"
 
+import "scripts/setting.js" as Settings
 import "scripts/branding.js" as Branding
 
 ApplicationWindow {
@@ -44,6 +46,36 @@ ApplicationWindow {
     minimumHeight: AppTheme.screenWidthSize
 
     visibility: "Maximized"
+
+    Material.accent: "#039be6"
+
+    background: Rectangle {
+        anchors.fill: parent
+
+        border.color: "transparent"
+
+        gradient: Gradient {
+            GradientStop {
+                position: 0.0
+                color: "#ffffff"
+            }
+
+            GradientStop {
+                position: 0.4
+                color: "#ffffff"
+            }
+
+            GradientStop {
+                position: 0.401
+                color: "#039be6"
+            }
+
+            GradientStop {
+                position: 1.0
+                color: "#039be6"
+            }
+        }
+    }
 
     title: Branding.VER_APPNAME_STR
 
@@ -61,6 +93,38 @@ ApplicationWindow {
 
     SettingDialog {
         id: settingDialog
+    }
+
+    Component.onCompleted: {
+        var language = setting.read("language")
+
+        if (language === "") {
+            setting.write("language", "en_US")
+
+            Settings.language = "en_US"
+        } else {
+            Settings.language = language
+
+            translator.selectLanguage(language)
+        }
+
+        var version = setting.read("version")
+
+        var major = isNaN(Number(version.split(".")[0])) ? 0 : Number(version.split(".")[0])
+        var minor = isNaN(Number(version.split(".")[1])) ? 0 : Number(version.split(".")[1])
+        var revis = isNaN(Number(version.split(".")[2])) ? 0 : Number(version.split(".")[3])
+        var build = isNaN(Number(version.split(".")[3])) ? 0 : Number(version.split(".")[3])
+
+        if (version === "" || (major < Branding.VERSIONMAJOR && minor < Branding.VERSIONMINOR && revis < Branding.VERSIONREVIS && build < Branding.BUILD_NUMBER)) {
+            setting.write("version", Branding.VERSIONFULL2)
+        } else {
+            Branding.VERSIONMAJOR = major
+            Branding.VERSIONMINOR = minor
+            Branding.VERSIONREVIS = revis
+            Branding.BUILD_NUMBER = build
+        }
+
+        showMaximized()
     }
 
     header: HeaderBar {

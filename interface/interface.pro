@@ -46,10 +46,7 @@ QML_DESIGNER_IMPORT_PATH =
 include(interface.pri)
 include(translation.pri)
 
-TRANSLATIONS =  translation/qml_de.ts \
-                translation/qml_es.ts \
-                translation/qml_fr.ts \
-                translation/qml_vi.ts
+TRANSLATIONS =  translation/qml_vi.ts
 
 win32:RC_FILE = interface.rc
 

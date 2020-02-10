@@ -27,7 +27,6 @@ import QtQuick.Window 2.10
 
 import "../theme"
 
-import "../scripts/global.js" as Global
 import "../scripts/branding.js" as Branding
 
 Dialog {

@@ -25,9 +25,6 @@ modification, are permitted provided that the following conditions are met:
 Translation::Translation(QObject *parent) :
     QObject(parent)
 {
-    _deTranslator = new QTranslator(this);
-    _esTranslator = new QTranslator(this);
-    _frTranslator = new QTranslator(this);
     _viTranslator = new QTranslator(this);
 }
 
@@ -38,24 +35,6 @@ QString Translation::getEmptyString()
 
 void Translation::selectLanguage(QString language)
 {
-    if (language == QString("fr_FR")) { //French
-         _frTranslator->load(":/translation/qml_fr.qm");
-
-         qApp->installTranslator(_frTranslator);
-    }
-
-    if (language == QString("de_DE")) { //German
-         _deTranslator->load(":/translation/qml_de.qm");
-
-         qApp->installTranslator(_deTranslator);
-    }
-
-    if (language == QString("es_ES")) { //Spanish
-         _esTranslator->load(":/translation/qml_es.qm");
-
-         qApp->installTranslator(_esTranslator);
-    }
-
     if (language == QString("vi_VN")) { //Vietnamese
         _viTranslator->load(":/translation/qml_vi.qm");
 
@@ -63,9 +42,6 @@ void Translation::selectLanguage(QString language)
     }
 
     if (language == QString("en_US")){ //English
-        qApp->removeTranslator(_deTranslator);
-        qApp->removeTranslator(_esTranslator);
-        qApp->removeTranslator(_frTranslator);
         qApp->removeTranslator(_viTranslator);
     }
 

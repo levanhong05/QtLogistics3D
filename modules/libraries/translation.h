@@ -44,9 +44,6 @@ signals:
     void requestTranslate(QString language);
 
 private:
-    QTranslator *_deTranslator;
-    QTranslator *_esTranslator;
-    QTranslator *_frTranslator;
     QTranslator *_viTranslator;
 
 };

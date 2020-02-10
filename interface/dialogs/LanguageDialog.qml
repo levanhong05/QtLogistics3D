@@ -38,7 +38,7 @@ Dialog {
     modal: true
 
     width: AppTheme.hscale(330)
-    height:AppTheme.vscale(300)
+    height:AppTheme.vscale(150)
 
     x: (parent.width - width) / 2
     y: (parent.height - height) / 2
@@ -51,27 +51,9 @@ Dialog {
         id: languageModel
 
         ListElement {
-            name: "Deutsch (Deutschland)"
-            nation: "germany"
-            value: "de_DE"
-        }
-
-        ListElement {
             name: "English (United States)"
             nation: "america"
             value: "en_US"
-        }
-
-        ListElement {
-            name: "Español (España)"
-            nation: "spain"
-            value: "es_ES"
-        }
-
-        ListElement {
-            name: "Français (France)"
-            nation: "france"
-            value: "fr_FR"
         }
 
         ListElement {

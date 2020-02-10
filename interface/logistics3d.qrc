@@ -8,9 +8,6 @@
         <file>images/language/germany.png</file>
         <file>images/language/spain.png</file>
         <file>images/language/vietnam.png</file>
-        <file>translation/qml_de.qm</file>
-        <file>translation/qml_es.qm</file>
-        <file>translation/qml_fr.qm</file>
         <file>translation/qml_vi.qm</file>
         <file>fonts/helveticaneue.ttf</file>
         <file>fonts/helveticaneuebold.ttf</file>
