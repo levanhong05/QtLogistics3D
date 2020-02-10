@@ -15,8 +15,9 @@
         <file>dialogs/AboutDialog.qml</file>
         <file>dialogs/LanguageDialog.qml</file>
         <file>dialogs/SettingDialog.qml</file>
-        <file>screens/RenderScreen.qml</file>
-        <file>materials/Water.qml</file>
-        <file>materials/WaterMaterial.qml</file>
+        <file>components/ComponentObj.qml</file>
+        <file>components/ComponentScene.qml</file>
+        <file>components/Environment.qml</file>
+        <file>components/RenderScreen.qml</file>
     </qresource>
 </RCC>

@@ -21,7 +21,6 @@ modification, are permitted provided that the following conditions are met:
 import QtQuick 2.10
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
-import QtQuick.Scene3D 2.0
 import QtQuick.Controls.Material 2.1
 
 import Setting 1.0
@@ -29,7 +28,7 @@ import Setting 1.0
 import "header"
 import "dialogs"
 import "theme"
-import "screens"
+import "components"
 
 import "scripts/setting.js" as Settings
 import "scripts/branding.js" as Branding
@@ -181,18 +180,11 @@ ApplicationWindow {
                     }
                 }
 
-                Scene3D {
-                    id: scene3d
+                RenderScreen {
+                    id: componentUI
 
-                    Layout.fillWidth: true
                     Layout.fillHeight: true
-
-                    focus: true
-                    aspects: ["input", "logic"]
-
-                    cameraAspectRatioMode: Scene3D.AutomaticAspectRatio
-
-                    RenderScreen {}
+                    Layout.fillWidth: true
                 }
             }
         }

@@ -23,11 +23,9 @@ SOURCES += \
              main.cpp
 
 RESOURCES += \
+             assets.qrc \
              logistics3d.qrc \
-             qml.qrc \
-             models.qrc \
-             shaders.qrc \
-             textures.qrc
+             qml.qrc
 
 win32:LIBS += -L$$OUT_PWD/../dist/bin/ -llibraries
 unix: LIBS += -L$$OUT_PWD/modules/libraries/ -llibraries
