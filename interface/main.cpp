@@ -36,12 +36,14 @@ modification, are permitted provided that the following conditions are met:
 
 #include "setting.h"
 #include "translation.h"
+#include "customedoublevalidator.h"
 
 #include "../version.h"
 
 void registerType()
 {
     qmlRegisterType<Setting, 1>("Setting", 1, 0, "Setting");
+    qmlRegisterType<CustomeDoubleValidator, 1>("Validator", 1, 0, "CustomeDoubleValidator");
 }
 
 int main(int argc, char *argv[])

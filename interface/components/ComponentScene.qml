@@ -126,135 +126,47 @@ Entity {
         id: environment
     }
 
-    Entity {
-        id: glassComponent1
+    PackageObject {
+        id: object1
 
-        ComponentObj {
-            id: glassMesh1
+        z: -15
 
-            z: -15
+        width: componentWidth
+        height: componentHeight
 
-            width: componentWidth
-            height: componentHeight
-        }
-
-        MetalRoughMaterial {
-            id: glassMaterial1
-
-            baseColor: Qt.rgba(255, 0, 255)
-            metalness: 1
-            roughness: 0
-        }
-
-        property Transform glassTransform1: Transform {
-            matrix: {
-                var m = Qt.matrix4x4()
-                m.translate(Qt.vector3d(glassMesh1.x, glassMesh1.y, glassMesh1.z))
-                m.scale(glassMesh1.scale)
-
-                return m
-            }
-        }
-
-        components: [ glassMesh1, glassMaterial1, glassTransform1 ]
+        materialColor: Qt.rgba(255, 0, 255)
     }
 
-    Entity {
-        id: glassComponent2
+    PackageObject {
+        id: object2
 
-        ComponentObj {
-            id: glassMesh2
+        z: -5
 
-            z: -5
+        width: componentWidth
+        height: componentHeight
 
-            width: componentWidth
-            height: componentHeight
-        }
-
-        MetalRoughMaterial {
-            id: glassMaterial2
-
-            baseColor: Qt.rgba(0, 255, 255)
-            metalness: 1
-            roughness: 0
-        }
-
-        property Transform glassTransform2: Transform {
-            matrix: {
-                var m = Qt.matrix4x4()
-                m.translate(Qt.vector3d(glassMesh2.x, glassMesh2.y, glassMesh2.z))
-                m.scale(glassMesh2.scale)
-
-                return m
-            }
-        }
-
-        components: [ glassMesh2, glassMaterial2, glassTransform2 ]
+        materialColor: Qt.rgba(0, 255, 255)
     }
 
-    Entity {
-        id: glassComponent3
+    PackageObject {
+        id: object3
 
-        ComponentObj {
-            id: glassMesh3
+        z: 5
 
-            z: 5
+        width: componentWidth
+        height: componentHeight
 
-            width: componentWidth
-            height: componentHeight
-        }
-
-        MetalRoughMaterial {
-            id: glassMaterial3
-
-            baseColor: Qt.rgba(255, 255, 0)
-            metalness: 1
-            roughness: 0
-        }
-
-        property Transform glassTransform3: Transform {
-            matrix: {
-                var m = Qt.matrix4x4()
-                m.translate(Qt.vector3d(glassMesh3.x, glassMesh3.y, glassMesh3.z))
-                m.scale(glassMesh3.scale)
-
-                return m
-            }
-        }
-
-        components: [ glassMesh3, glassMaterial3, glassTransform3 ]
+        materialColor: Qt.rgba(0, 0, 255)
     }
 
-    Entity {
-        id: glassComponent4
+    PackageObject {
+        id: object4
 
-        ComponentObj {
-            id: glassMesh4
+        z: 15
 
-            z: 15
+        width: componentWidth
+        height: componentHeight
 
-            width: componentWidth
-            height: componentHeight
-        }
-
-        MetalRoughMaterial {
-            id: glassMaterial4
-
-            baseColor: Qt.rgba(0, 0, 255)
-            metalness: 1
-            roughness: 0
-        }
-
-        property Transform glassTransform4: Transform {
-            matrix: {
-                var m = Qt.matrix4x4()
-                m.translate(Qt.vector3d(glassMesh4.x, glassMesh4.y, glassMesh4.z))
-                m.scale(glassMesh4.scale)
-
-                return m
-            }
-        }
-
-        components: [ glassMesh4, glassMaterial4, glassTransform4 ]
+        materialColor: Qt.rgba(255, 0, 255)
     }
 }

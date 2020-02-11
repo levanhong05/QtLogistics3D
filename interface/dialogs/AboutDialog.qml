@@ -58,7 +58,7 @@ Dialog {
             spacing: AppTheme.hscale(30)
 
             Image {
-                Layout.alignment: Text.AlignLeft
+                Layout.alignment: Qt.AlignLeft
 
                 source: "qrc:/images/truck.png"
 
@@ -100,7 +100,7 @@ Dialog {
                 Layout.preferredWidth: AppTheme.tscale(16)
                 Layout.preferredHeight: AppTheme.tscale(16)
 
-                Layout.alignment: Qt.AlignVCenter
+                Layout.alignment: Qt.AlignLeft
 
                 source: "qrc:/images/close.png"
 

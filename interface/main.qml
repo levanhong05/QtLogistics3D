@@ -24,10 +24,12 @@ import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.1
 
 import Setting 1.0
+import Validator 1.0
 
+import "theme"
 import "header"
 import "dialogs"
-import "theme"
+import "widgets"
 import "components"
 
 import "scripts/setting.js" as Settings
@@ -202,8 +204,7 @@ ApplicationWindow {
             }
 
             spacing: AppTheme.screenPadding
-
-            padding: AppTheme.tscale(2)
+            padding: AppTheme.screenPadding
 
             ColumnLayout {
                 Layout.fillWidth: true
@@ -241,9 +242,117 @@ ApplicationWindow {
                     }
                 }
 
-                ColumnLayout {
+                ScrollView {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+
+                    contentWidth: parent.width - AppTheme.hscale(10)
+
+                    clip: true
+
+                    GridLayout {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                        anchors.fill: parent
+
+                        columnSpacing: AppTheme.hscale(20)
+
+                        Label {
+                            id: lblWidth
+                            text: qsTr("Container width") + translator.tr
+                            font.pointSize: AppTheme.textSize13
+                            horizontalAlignment: Text.AlignLeft
+                            verticalAlignment: Text.AlignVCenter
+
+                            Layout.row: 0
+                            Layout.column: 0
+                        }
+
+                        CustomeTextField {
+                            id: txtWidth
+
+                            Layout.fillWidth: true
+
+                            Layout.row: 0
+                            Layout.column: 1
+
+                            text: "9"
+
+                            font.pointSize: AppTheme.textSize13
+                            placeholderText: enabled ? qsTr("Enter width") + translator.tr : ""
+
+                            horizontalAlignment: Text.AlignHCenter
+
+                            validator: CustomeDoubleValidator { bottom: 0 }
+
+                            onTextChanged: {
+                                //TODO
+                            }
+                        }
+
+                        Label {
+                            id: lblWidthUnit
+
+                            text: "ft"
+                            font.pointSize: AppTheme.textSize13
+                            horizontalAlignment: Text.AlignLeft
+                            verticalAlignment: Text.AlignVCenter
+
+                            Layout.row: 0
+                            Layout.column: 2
+                        }Label {
+                            id: lblHeight
+
+                            text: qsTr("Container height") + translator.tr
+                            font.pointSize: AppTheme.textSize13
+                            horizontalAlignment: Text.AlignLeft
+                            verticalAlignment: Text.AlignVCenter
+
+                            Layout.row: 1
+                            Layout.column: 0
+                        }
+
+                        CustomeTextField {
+                            id: txtHeight
+
+                            Layout.fillWidth: true
+
+                            Layout.row: 1
+                            Layout.column: 1
+
+                            text: "8"
+
+                            font.pointSize: AppTheme.textSize13
+                            placeholderText: enabled ? qsTr("Enter height") + translator.tr : ""
+
+                            horizontalAlignment: Text.AlignHCenter
+
+                            validator: CustomeDoubleValidator { bottom: 0 }
+
+                            onTextChanged: {
+                                //componentUI.componentHeight = Number(text) * 35 / 1400
+                                graphicScene.glassHeight = Number(text)
+                                resultGraphicScene.glassHeight = Number(text)
+
+                                glassHeight = Number(text)
+
+                                glassParameter.glassHeight = Number(text)
+                            }
+                        }
+
+                        Label {
+                            id: lblHeightUnit
+
+                            text: "ft"
+                            font.pointSize: AppTheme.textSize13
+                            horizontalAlignment: Text.AlignLeft
+                            verticalAlignment: Text.AlignVCenter
+
+                            Layout.row: 1
+                            Layout.column: 2
+                        }
+                    }
                 }
             }
         }

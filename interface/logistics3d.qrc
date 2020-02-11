@@ -26,5 +26,19 @@
         <file>images/header/language.png</file>
         <file>images/header/settings.png</file>
         <file>images/settings.png</file>
+        <file>images/settings/about.png</file>
+        <file>images/settings/community.png</file>
+        <file>images/settings/contact_list.png</file>
+        <file>images/settings/FAQ.png</file>
+        <file>images/settings/introduction.png</file>
+        <file>images/settings/license.png</file>
+        <file>images/settings/logo_register.png</file>
+        <file>images/settings/privacy-policy.png</file>
+        <file>images/settings/term-of-services.png</file>
+        <file>images/settings/translate.png</file>
+        <file>images/settings/update.png</file>
+        <file>images/settings/customer_support.png</file>
+        <file>images/settings/user_guide.png</file>
+        <file>images/settings/user_infomation.png</file>
     </qresource>
 </RCC>

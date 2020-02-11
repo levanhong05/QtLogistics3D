@@ -18,10 +18,15 @@ modification, are permitted provided that the following conditions are met:
 **
 ****************************************************************************/
 
-import Qt3D.Render 2.0
-import Qt3D.Extras 2.0
+import Qt3D.Core 2.0
+import Qt3D.Render 2.9
+import Qt3D.Input 2.0
+import Qt3D.Extras 2.9
+import Qt3D.Logic 2.0
 
-CuboidMesh {
+Entity {
+    id: entity
+
     property real x: 0
     property real y: 0
     property real z: 0
@@ -30,9 +35,34 @@ CuboidMesh {
     property real height: 35
     property real thickness: 10
 
-    property real scale: 1
+    property real scaleValue: 1
+    property color materialColor: Qt.rgba(255, 255, 255)
 
-    xExtent: width
-    yExtent: height
-    zExtent: thickness
+    CuboidMesh {
+        id: mesh
+
+        xExtent: width
+        yExtent: height
+        zExtent: thickness
+    }
+
+    MetalRoughMaterial {
+        id: material
+
+        baseColor: materialColor
+        metalness: 1
+        roughness: 0
+    }
+
+    property Transform transformMatrix: Transform {
+        matrix: {
+            var m = Qt.matrix4x4()
+            m.translate(Qt.vector3d(x, y, z))
+            m.scale(scaleValue)
+
+            return m
+        }
+    }
+
+    components: [ mesh, material, transformMatrix ]
 }

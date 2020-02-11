@@ -15,9 +15,12 @@
         <file>dialogs/AboutDialog.qml</file>
         <file>dialogs/LanguageDialog.qml</file>
         <file>dialogs/SettingDialog.qml</file>
-        <file>components/ComponentObj.qml</file>
+        <file>components/PackageObject.qml</file>
         <file>components/ComponentScene.qml</file>
         <file>components/Environment.qml</file>
         <file>components/RenderScreen.qml</file>
+        <file>delegates/ContactDelegate.qml</file>
+        <file>dialogs/ContactDialog.qml</file>
+        <file>widgets/CustomeTextField.qml</file>
     </qresource>
 </RCC>

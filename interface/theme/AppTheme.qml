@@ -67,6 +67,8 @@ QtObject
     readonly property int textSize11: tscale(11)
     readonly property int textSize10: tscale(10)
 
+    readonly property real lineHeight: vscale(3)
+
     readonly property real rowSpacing: vscale(16)
     readonly property real columnSpacing: hscale(20)
 
