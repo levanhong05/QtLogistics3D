@@ -206,7 +206,7 @@ Dialog {
                                 cursorShape: Qt.PointingHandCursor
 
                                 onClicked: {
-                                    Qt.openUrlExternally("tel:(+33)0130852308")
+                                    Qt.openUrlExternally("tel:" + Branding.VER_PHONE)
                                 }
                             }
                         }
@@ -240,7 +240,7 @@ Dialog {
                                 cursorShape: Qt.PointingHandCursor
 
                                 onClicked: {
-                                    Qt.openUrlExternally("http://levanhong05.wordpress.com/terms-of-use")
+                                    Qt.openUrlExternally(Branding.VER_PRODUCTDOMAIN_STR)
                                 }
                             }
                         }
@@ -274,7 +274,7 @@ Dialog {
                                 cursorShape: Qt.PointingHandCursor
 
                                 onClicked: {
-                                    Qt.openUrlExternally("http://levanhong05.wordpress.com/privacy-policy")
+                                    Qt.openUrlExternally(Branding.VER_PRODUCTDOMAIN_STR)
                                 }
                             }
                         }
@@ -308,7 +308,7 @@ Dialog {
                                 cursorShape: Qt.PointingHandCursor
 
                                 onClicked: {
-                                    Qt.openUrlExternally("http://levanhong05.wordpress.com/")
+                                    Qt.openUrlExternally(Branding.VER_PRODUCTDOMAIN_STR)
                                 }
                             }
                         }
@@ -342,7 +342,7 @@ Dialog {
                                 cursorShape: Qt.PointingHandCursor
 
                                 onClicked: {
-                                    Qt.openUrlExternally("http://levanhong05.wordpress.com/faq")
+                                    Qt.openUrlExternally(Branding.VER_PRODUCTDOMAIN_STR)
                                 }
                             }
                         }

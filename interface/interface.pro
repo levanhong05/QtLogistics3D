@@ -25,7 +25,8 @@ SOURCES += \
 RESOURCES += \
              assets.qrc \
              logistics3d.qrc \
-             qml.qrc
+             qml.qrc \
+             textures.qrc
 
 win32:LIBS += -L$$OUT_PWD/../dist/bin/ -llibraries
 unix: LIBS += -L$$OUT_PWD/modules/libraries/ -llibraries

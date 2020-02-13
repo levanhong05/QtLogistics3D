@@ -46,12 +46,22 @@ Entity {
         zExtent: thickness
     }
 
-    MetalRoughMaterial {
+    TexturedMetalRoughMaterial {
         id: material
 
         baseColor: materialColor
-        metalness: 1
-        roughness: 0
+
+        normal: TextureLoader {
+            source: "qrc:/textures/box.png";
+            wrapMode {
+                x: WrapMode.ClampToEdge
+                y: WrapMode.ClampToEdge
+            }
+            generateMipMaps: true
+        }
+
+        metalness: 0.82
+        roughness: 0.32
     }
 
     property Transform transformMatrix: Transform {

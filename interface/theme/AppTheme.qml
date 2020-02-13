@@ -72,6 +72,26 @@ QtObject
     readonly property real rowSpacing: vscale(16)
     readonly property real columnSpacing: hscale(20)
 
+    readonly property real switchRadius: tscale(3)
+    readonly property real switchSize: tscale(22)
+    readonly property real switchImplicitWidth: hscale(60)
+    readonly property real switchImplicitHeight: vscale(26)
+
+    readonly property real comboBoxRadius: tscale(13)
+    readonly property real comboBoxImplicitWidth: hscale(120)
+    readonly property real comboBoxImplicitHeight: vscale(40)
+
+    readonly property real checkBoxRadius: tscale(3)
+    readonly property real checkBoxSize: tscale(22)
+    readonly property real checkBoxImplicitWidth: hscale(52)
+    readonly property real checkBoxImplicitHeight: vscale(26)
+    readonly property real checkBoxPadding: tscale(10)
+    readonly property real checkBoxSpacing: tscale(10)
+
+    readonly property real radioButtonRadius: tscale(15)
+    readonly property real radioButtonSize: tscale(22)
+    readonly property real radioButtonImplicitWidth: hscale(52)
+    readonly property real radioButtonImplicitHeight: vscale(26)
     readonly property real radioButtonPadding: tscale(8)
     readonly property real radioButtonSpacing: tscale(10)
 }

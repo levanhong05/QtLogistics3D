@@ -45,8 +45,8 @@ modification, are permitted provided that the following conditions are met:
 #define VER_PRODUCTNAME_STR         "Logistics 3D"
 #define VER_MANUFACTURER_STR        "Eric Lee"
 
-#define VER_COMPANYDOMAIN_STR       "https://levanhong05.wordpress.com"
-#define VER_PRODUCTDOMAIN_STR       "https://levanhong05.wordpress.com"
+#define VER_COMPANYDOMAIN_STR       "https://github.com/levanhong05"
+#define VER_PRODUCTDOMAIN_STR       "https://github.com/levanhong05/QtLogistics3D"
 
 #define FONT_FAMILY_STR             "Helvetica Neue"
 

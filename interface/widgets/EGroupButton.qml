@@ -1,10 +1,10 @@
 /****************************************************************************
 **
-** Copyright (C) 2017 Eric Lee.
+** Copyright (C) 2020 Eric Lee.
 ** Contact: levanhong05@gmail.com
-** Company: DFM-Engineering Vietnam
+** Company: Freelancer
 **
-** This file is part of the Vitrages Decision 6.0 project.
+** This file is part of the Qt Logistics 3D project.
 **
 **All rights reserved.
 
@@ -19,28 +19,7 @@ modification, are permitted provided that the following conditions are met:
 ****************************************************************************/
 
 import QtQuick 2.10
-import QtQuick.Controls 2.3
 
-import "../theme"
-
-TextField {
-    id: control
-
-    width: AppTheme.hscale(130)
-
-    selectByMouse: true
-
-    background: Rectangle {
-        color: enabled ? "transparent" : "#e4e4e4"
-
-        height: AppTheme.vscale(45)
-
-        Rectangle {
-            width: parent.width
-            height: AppTheme.tscale(2)
-            anchors.bottom: parent.bottom
-            color: "transparent"
-            border.color: control.hovered ? "#000000" : control.focus ? "#0ea6f9" : "#bcbcbc"
-        }
-    }
+QtObject {
+    property Item selected : null
 }

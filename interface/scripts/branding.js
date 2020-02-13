@@ -55,6 +55,8 @@ var VER_MANUFACTURER_STR = "Eric Lee (Hong Le)"
 
 var VER_EMAIL = "levanhong05@gmail.com"
 
-var VER_COMPANYDOMAIN_STR = "https://levanhong05.wordpress.com"
+var VER_PHONE = "(+84)348271680"
 
-var VER_PRODUCTDOMAIN_STR = "https://levanhong05.wordpress.com"
+var VER_COMPANYDOMAIN_STR = "https://github.com/levanhong05"
+
+var VER_PRODUCTDOMAIN_STR = "https://github.com/levanhong05/QtLogistics3D"

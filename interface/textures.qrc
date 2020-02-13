@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>textures/box.png</file>
+        <file>textures/cardboard_0001.jpg</file>
+        <file>textures/cardboard_0002.jpg</file>
+        <file>textures/cardboard_0008.jpg</file>
+        <file>textures/cardboard_0016.jpg</file>
+        <file>textures/container_door.jpg</file>
+        <file>textures/container_front.jpg</file>
+        <file>textures/container_side.jpg</file>
+        <file>textures/metal_containers_0110.jpg</file>
+    </qresource>
+</RCC>

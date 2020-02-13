@@ -16,11 +16,17 @@
         <file>dialogs/LanguageDialog.qml</file>
         <file>dialogs/SettingDialog.qml</file>
         <file>components/PackageObject.qml</file>
-        <file>components/ComponentScene.qml</file>
         <file>components/Environment.qml</file>
-        <file>components/RenderScreen.qml</file>
         <file>delegates/ContactDelegate.qml</file>
         <file>dialogs/ContactDialog.qml</file>
-        <file>widgets/CustomeTextField.qml</file>
+        <file>widgets/ETextField.qml</file>
+        <file>screens/ComponentScene.qml</file>
+        <file>screens/RenderScreen.qml</file>
+        <file>screens/ParameterScreen.qml</file>
+        <file>widgets/ECheckbox.qml</file>
+        <file>widgets/EComboBox.qml</file>
+        <file>widgets/ERadioButton.qml</file>
+        <file>widgets/ESwitchButton.qml</file>
+        <file>widgets/EGroupButton.qml</file>
     </qresource>
 </RCC>

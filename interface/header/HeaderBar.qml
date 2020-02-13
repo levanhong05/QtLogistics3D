@@ -76,7 +76,7 @@ Frame {
                 break;
 
             case 4: //Help
-                //TODO
+                Qt.openUrlExternally("tel:" + Branding.VER_PHONE)
                 break;
 
             case 2: //Divider

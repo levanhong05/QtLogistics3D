@@ -18,13 +18,15 @@ modification, are permitted provided that the following conditions are met:
 **
 ****************************************************************************/
 
-import Qt3D.Core 2.0
+import Qt3D.Core 2.10
 import Qt3D.Render 2.9
 import Qt3D.Input 2.0
 import Qt3D.Extras 2.9
 import Qt3D.Logic 2.0
 
 import QtQuick 2.10
+
+import "../components"
 
 Entity {
     id: sceneRoot
@@ -126,47 +128,16 @@ Entity {
         id: environment
     }
 
-    PackageObject {
-        id: object1
+    NodeInstantiator {
+        model: entities
 
-        z: -15
+        delegate: PackageObject {
+            z: -15 + 10 * index
 
-        width: componentWidth
-        height: componentHeight
+            width: componentWidth
+            height: componentHeight
 
-        materialColor: Qt.rgba(255, 0, 255)
-    }
-
-    PackageObject {
-        id: object2
-
-        z: -5
-
-        width: componentWidth
-        height: componentHeight
-
-        materialColor: Qt.rgba(0, 255, 255)
-    }
-
-    PackageObject {
-        id: object3
-
-        z: 5
-
-        width: componentWidth
-        height: componentHeight
-
-        materialColor: Qt.rgba(0, 0, 255)
-    }
-
-    PackageObject {
-        id: object4
-
-        z: 15
-
-        width: componentWidth
-        height: componentHeight
-
-        materialColor: Qt.rgba(255, 0, 255)
+            materialColor: Qt.rgba(Math.random(), Math.random(), Math.random())
+        }
     }
 }
