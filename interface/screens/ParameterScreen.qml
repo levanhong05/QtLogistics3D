@@ -28,6 +28,8 @@ import Validator 1.0
 import "../theme"
 import "../widgets"
 
+import "../scripts/maths.js" as Maths
+
 Frame {
     id: frameGraphics
 
@@ -146,7 +148,7 @@ Frame {
                 validator: CustomeDoubleValidator { bottom: 0 }
 
                 onTextChanged: {
-                    //TODO
+                    componentUI.containerLength = Maths.ft2cm(Number(text))
                 }
             }
 
@@ -193,7 +195,7 @@ Frame {
                 validator: CustomeDoubleValidator { bottom: 0 }
 
                 onTextChanged: {
-                    //TODO
+                    componentUI.containerWidth = Maths.ft2cm(Number(text))
                 }
             }
 
@@ -239,7 +241,7 @@ Frame {
                 validator: CustomeDoubleValidator { bottom: 0 }
 
                 onTextChanged: {
-                    //TODO
+                    componentUI.containerHeight = Maths.ft2cm(Number(text))
                 }
             }
 

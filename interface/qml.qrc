@@ -28,5 +28,8 @@
         <file>widgets/ERadioButton.qml</file>
         <file>widgets/ESwitchButton.qml</file>
         <file>widgets/EGroupButton.qml</file>
+        <file>components/ContainerObject.qml</file>
+        <file>scripts/maths.js</file>
+        <file>components/Lights.qml</file>
     </qresource>
 </RCC>

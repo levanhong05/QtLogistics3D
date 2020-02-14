@@ -27,6 +27,12 @@ import Qt3D.Logic 2.0
 Entity {
     id: entity
 
+    enum TextureType {
+        METAL,
+        PAPER,
+        WOOD
+    }
+
     property real x: 0
     property real y: 0
     property real z: 0
@@ -37,6 +43,8 @@ Entity {
 
     property real scaleValue: 1
     property color materialColor: Qt.rgba(255, 255, 255)
+
+    property int textures: PackageObject.TextureType.PAPER
 
     CuboidMesh {
         id: mesh

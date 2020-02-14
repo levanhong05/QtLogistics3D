@@ -20,3 +20,4 @@ modification, are permitted provided that the following conditions are met:
 
 .pragma library
 
+var RENDER_RATIO = 1.15

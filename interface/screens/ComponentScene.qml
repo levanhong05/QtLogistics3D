@@ -28,6 +28,9 @@ import QtQuick 2.10
 
 import "../components"
 
+import "../scripts/global.js" as Global
+import "../scripts/maths.js" as Maths
+
 Entity {
     id: sceneRoot
 
@@ -40,9 +43,13 @@ Entity {
     property double componentWidth: 60
     property double componentHeight: 35
 
-    property real roughness
-    property real exposure
-    property real gamma
+    property real roughness: 0
+    property real exposure: 2
+    property real gamma: 2.8
+
+    property real containerLength: Maths.ft2cm(20)
+    property real containerWidth: Maths.ft2cm(8)
+    property real containerHeight: Maths.ft2cm(8.6)
 
     MouseDevice {
         id: mouseDevice
@@ -85,7 +92,7 @@ Entity {
     Camera {
         id: camera
         projectionType: CameraLens.PerspectiveProjection
-        fieldOfView:    60
+        fieldOfView:    100
 
         aspectRatio:    1920 / 1080
         nearPlane:      0.01
@@ -93,7 +100,7 @@ Entity {
 
         viewCenter:     Qt.vector3d( 0.5, 1.0, 0.1 )
         upVector:       Qt.vector3d( 0.0, 1.0, 0.0 )
-        position:       Qt.vector3d( 10.0, 60.0, 0.0 )
+        position:       Qt.vector3d( 10.0, -100.0, 0.0 )
 
         exposure: sceneRoot.exposure
     }
@@ -119,13 +126,96 @@ Entity {
         InputSettings { }
     ]
 
-    DirectionalLight {
-        id: light
-        worldDirection: camera.viewVector
+    Lights { }
+
+    Entity {
+        components: [
+            PointLight {
+                enabled: parent.enabled
+                color: "black"
+                intensity: 0
+            },
+            EnvironmentLight {
+                enabled: parent.enabled
+
+                irradiance: TextureLoader {
+                    source: "qrc:/assets/default_irradiance.dds"
+                    wrapMode {
+                        x: WrapMode.ClampToEdge
+                        y: WrapMode.ClampToEdge
+                    }
+                    generateMipMaps: false
+                }
+                specular: TextureLoader {
+                    source: "qrc:/assets/default_specular.dds"
+                    wrapMode {
+                        x: WrapMode.ClampToEdge
+                        y: WrapMode.ClampToEdge
+                    }
+                    generateMipMaps: false
+                }
+            }
+        ]
     }
 
-    Environment {
-        id: environment
+    ContainerObject {
+        width: containerWidth * Global.RENDER_RATIO
+        height: containerHeight * Global.RENDER_RATIO
+        thickness: 1
+
+        z: containerLength * Global.RENDER_RATIO / 2 * -1
+
+        side: ContainerObject.ContainerSide.FRONTS
+    }
+
+    ContainerObject {
+        width: containerWidth * Global.RENDER_RATIO
+        height: containerHeight * Global.RENDER_RATIO
+        thickness: 1
+
+        z: containerLength * Global.RENDER_RATIO / 2
+
+        side: ContainerObject.ContainerSide.BACK_DOOR
+    }
+
+    ContainerObject {
+        width: containerWidth * Global.RENDER_RATIO
+        height: 1
+        thickness: containerLength * Global.RENDER_RATIO
+
+        y: containerHeight * Global.RENDER_RATIO / 2 * -1
+
+        side: ContainerObject.ContainerSide.TOP
+    }
+
+    ContainerObject {
+        width: containerWidth * Global.RENDER_RATIO
+        height: 1
+        thickness: containerLength * Global.RENDER_RATIO
+
+        y: containerHeight * Global.RENDER_RATIO / 2
+
+        side: ContainerObject.ContainerSide.BOTTOM
+    }
+
+    ContainerObject {
+        width: 1
+        height: containerHeight * Global.RENDER_RATIO
+        thickness: containerLength * Global.RENDER_RATIO
+
+        x: containerWidth * Global.RENDER_RATIO / 2 * -1
+
+        side: ContainerObject.ContainerSide.SIDE_FRONT
+    }
+
+    ContainerObject {
+        width: 1
+        height: containerHeight * Global.RENDER_RATIO
+        thickness: containerLength * Global.RENDER_RATIO
+
+        x: containerWidth * Global.RENDER_RATIO / 2
+
+        side: ContainerObject.ContainerSide.SIDE_BACK
     }
 
     NodeInstantiator {

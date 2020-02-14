@@ -33,6 +33,10 @@ Item {
 
     property int entityNumbers: 4
 
+    property alias containerLength: componentScene.containerLength
+    property alias containerWidth: componentScene.containerWidth
+    property alias containerHeight: componentScene.containerHeight
+
     Scene3D {
         id: scene3d
         anchors.fill: parent
@@ -44,10 +48,6 @@ Item {
             id: componentScene
 
             entities: entityNumbers
-
-            roughness: 0
-            exposure: 2
-            gamma: 2.8
         }
     }
 
